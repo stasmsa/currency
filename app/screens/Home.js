@@ -6,6 +6,7 @@ import { Logo } from '../components/Logo';
 import { InputWithButton } from '../components/TextInput';
 import { ClearButton } from '../components/Button';
 import { LastConverted } from '../components/Text';
+import { Header } from '../components/Header';
 
 const TEMP_BASE_CURRENCY = 'USD';
 const TEMP_QUOTE_CURRENCY = 'GBP';
@@ -31,10 +32,17 @@ class Home extends Component {
     console.log('press change currency');
   }
 
+  handleOptionsPress = () => {
+    console.log('handle options press');
+  }
+
   render() {
     return (
       <Container>
         <StatusBar backgroundColor="#4f6d7a" barStyle="light-content" />
+        <Header
+          onPress={this.handleOptionsPress}
+        />
         <Logo />
         <InputWithButton
           buttonText={TEMP_BASE_CURRENCY}
