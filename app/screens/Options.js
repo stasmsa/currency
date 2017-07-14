@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { ScrollView, Platform } from 'react-native';
+import { ScrollView, Platform, Linking } from 'react-native';
 
 import { ListItem, Separator } from '../components/List';
 
@@ -17,7 +17,7 @@ class Options extends Component {
   };
 
   handleSitePress = () => {
-    console.log('press site');
+    Linking.openURL('http://fixer.io').catch(() => alert('An error url'));
   };
 
   render() {
